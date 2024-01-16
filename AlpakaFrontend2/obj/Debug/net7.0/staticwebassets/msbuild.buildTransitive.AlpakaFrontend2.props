@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/AlpakaFrontend2.props" />
+</Project>

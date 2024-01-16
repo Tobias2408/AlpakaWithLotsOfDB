@@ -1,0 +1,10 @@
+/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/obj/Debug/net6.0/RestNeo4j.csproj.AssemblyReference.cache
+/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/obj/Debug/net6.0/RestNeo4j.GeneratedMSBuildEditorConfig.editorconfig
+/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/obj/Debug/net6.0/RestNeo4j.AssemblyInfoInputs.cache
+/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/obj/Debug/net6.0/RestNeo4j.AssemblyInfo.cs
+/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/obj/Debug/net6.0/RestNeo4j.csproj.CoreCompileInputs.cache
+/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/obj/Debug/net6.0/RestNeo4j.MvcApplicationPartsAssemblyInfo.cs
+/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/obj/Debug/net6.0/RestNeo4j.MvcApplicationPartsAssemblyInfo.cache
+/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/obj/Debug/net6.0/RestNeo4j.RazorAssemblyInfo.cache
+/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/obj/Debug/net6.0/RestNeo4j.RazorAssemblyInfo.cs
+/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/obj/Debug/net6.0/RestNeo4j.sourcelink.json

@@ -1,0 +1,155 @@
+﻿@page "/CreateAlpakaEvent"
+@inject ApiService ApiService
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager NavigationManager
+@inject ProtectedSessionStorage sessionStorage
+
+
+@using RestAlpaka.Model
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@using AlpakaFrontend2.Service
+
+<h3>Create Alpaka and Event</h3>
+
+@if (alpakaSuccessMessage != null)
+{
+    <p class="alert alert-success">@alpakaSuccessMessage</p>
+}
+
+<EditForm Model="@alpaka" OnValidSubmit="@CreateAlpaka">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <h4>Alpaka Information</h4>
+    <div class="form-group">
+        <label for="Alpaka_name">Alpaka Name:</label>
+        <InputText id="Alpaka_name" @bind-Value="alpaka.Alpaka_name" class="form-control" />
+        <ValidationMessage For="@(() => alpaka.Alpaka_name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="color">Color:</label>
+        <InputText id="color" @bind-Value="alpaka.color" class="form-control" />
+        <ValidationMessage For="@(() => alpaka.color)" />
+    </div>
+
+    <div class="form-group">
+        <label for="age">Age:</label>
+        <InputNumber id="age" @bind-Value="alpaka.age" class="form-control" />
+        <ValidationMessage For="@(() => alpaka.age)" />
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <InputText id="description" @bind-Value="alpaka.description" class="form-control" />
+        <ValidationMessage For="@(() => alpaka.description)" />
+    </div>
+
+
+
+    <br />
+
+    <button type="submit">Create Alpaka</button>
+</EditForm>
+
+@if (eventSuccessMessage != null)
+{
+    <p class="alert alert-success">@eventSuccessMessage</p>
+}
+
+<EditForm Model="@eventModel" OnValidSubmit="@CreateEvent">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <h4>Event Information</h4>
+    <div class="form-group">
+        <label for="Event_date">Event Date:</label>
+        <InputDate id="Event_date" @bind-Value="eventModel.Event_date" class="form-control" />
+        <ValidationMessage For="@(() => eventModel.Event_date)" />
+    </div>
+
+    <div class="form-group">
+        <label for="Location_id">Event Location:</label>
+        <InputNumber id="Location" @bind-Value="eventModel.Location_id" class="form-control" />
+        <ValidationMessage For="@(() => eventModel.Location_id)" />
+    </div>
+
+
+    <div class="form-group">
+        <label for="Capacity">Capacity:</label>
+        <InputNumber id="Capacity" @bind-Value="eventModel.Capacity" class="form-control" />
+        <ValidationMessage For="@(() => eventModel.Capacity)" />
+    </div>
+
+    <div class="form-group">
+        <label for="Description">Event Description:</label>
+        <InputText id="Description" @bind-Value="eventModel.Description" class="form-control" />
+        <ValidationMessage For="@(() => eventModel.Description)" />
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="Name">Event Name:</label>
+        <InputText id="Name" @bind-Value="eventModel.Name" class="form-control" />
+        <ValidationMessage For="@(() => eventModel.Name)" />
+    </div>
+    <br />
+    <button type="submit">Create Event</button>
+</EditForm>
+
+@code {
+    private Alpaka alpaka = new Alpaka();
+    private Event eventModel = new Event();
+    private string alpakaSuccessMessage;
+    private string eventSuccessMessage;
+    private const string TokenKey = "authToken"; 
+    private bool isAuthenticated = false;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var tokenResult = await sessionStorage.GetAsync<string>(TokenKey);
+            isAuthenticated = tokenResult.Success && !string.IsNullOrEmpty(tokenResult.Value);
+
+            if (!isAuthenticated)
+            {
+                NavigationManager.NavigateTo("login");
+            }
+            else
+            {
+                var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+                var user = authState.User;
+
+                if (user.Identity.IsAuthenticated)
+                {
+                    // Assuming the role is stored in a claim named "Role"
+                    var isAdmin = user.HasClaim(c => c.Type == "Role" && c.Value == "Admin");
+                    if (!isAdmin)
+                    {
+                        // Redirect non-admin users
+                        NavigationManager.NavigateTo("not-authorized");
+                    }
+                }
+            }
+
+            StateHasChanged(); // Re-render the component
+        }
+    }
+
+
+    private async void CreateAlpaka()
+    {
+        await ApiService.CreateAsync("api/Alpaka", alpaka);
+        alpakaSuccessMessage = "Alpaka created successfully!";
+    }
+
+    private async void CreateEvent()
+    {
+        await ApiService.CreateAsync("Event", eventModel);
+        // ApiService.CreateEvent(eventModel);
+        eventSuccessMessage = "Event created successfully!";
+    }
+}

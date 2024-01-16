@@ -1,0 +1,13 @@
+@import '_content/Blazor.Bootstrap/Blazor.Bootstrap.bundle.scp.css';
+
+/* _content/AlpakaFrontend2/Pages/Alpakas.razor.rz.scp.css */
+/* _content/AlpakaFrontend2/Pages/Index.razor.rz.scp.css */
+
+.center-image[b-xwdcl41k8c] {
+    text-align: center;
+    line-height: 100px; /* Adjust the line-height to match the height of your image */
+}
+
+    .center-image img[b-xwdcl41k8c] {
+        vertical-align: middle;
+    }

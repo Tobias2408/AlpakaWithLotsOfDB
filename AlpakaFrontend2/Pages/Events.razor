@@ -1,0 +1,49 @@
+﻿@page "/events"
+@using AlpakaFrontend2.Service;
+@inject ApiService ApiService
+@using System.Net.Http
+@using RestAlpaka.Model
+@inject HttpClient Http
+@using Microsoft.AspNetCore.Components.Routing
+@inject NavigationManager NavigationManager
+
+<h1>Upcoming Events</h1>
+
+@if (events == null)
+{
+  <p> Loading </p>
+}
+else
+{
+       @foreach ( var ev in events)
+    {
+        <div class="event">
+            <h2>@ev.Name</h2>
+            <p>@ev.Description</p>
+            <p> @ev.Description</p>
+            <button @onclick="() => BookEvent(ev)">Book Now</button>
+        </div>
+    }
+}
+
+
+
+@code {
+
+
+    private Alpaka[]? alpakas;
+    private Event[]? events;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        alpakas = await ApiService.GetTAsync<Alpaka[]>("api/Alpaka"); 
+        events = await ApiService.GetTAsync<Event[]>("Event");
+    }
+   
+    void BookEvent(Event ev) 
+    {
+        NavigationManager.NavigateTo("/booking");
+    }
+}
+

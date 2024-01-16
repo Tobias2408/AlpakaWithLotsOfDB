@@ -1,0 +1,175 @@
+﻿@page "/AlpakaWalk"
+
+
+    <div>
+    <h3 >
+        Are you ready for an unforgettable adventure? Discover the enchanting world of alpacas with us at Fuzzy Valley Alpaca Ranch.
+        We invite you to join us for a one-of-a-kind alpaca walk that promises fun, relaxation, and the chance to connect with these lovable creatures.
+        You can book a walk here
+    </h3>
+
+    </div>
+
+
+<div class="row">
+    <div class="col-75">
+        <div class="container">
+            <form>
+                <div class="row">
+                    <div class="col-50">
+                        <h3> Address</h3>
+                        <div class="form-group">
+                            <label for="fname"> Full Name</label>
+                            <input type="text" id="fname" @bind="FullName" placeholder="John M. Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><Icon Name="IconName.Alarm" /> Email</label>
+                            <input type="text" id="email" @bind="Email" placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                            <input type="text" id="adr" @bind="Address" placeholder="542 W. 15th Street">
+                        </div>
+                        <div class="form-group">
+                            <label for="city"><i class="fa fa-institution"></i> City</label>
+                            <input type="text" id="city" @bind="City" placeholder="New York">
+                        </div>
+                        <div class="row">
+                            <div class="col-50">
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <input type="text" id="state" @bind="State" placeholder="NY">
+                                </div>
+                            </div>
+                            <div class="col-50">
+                                <div class="form-group">
+                                    <label for="zip">Zip</label>
+                                    <input type="text" id="zip" @bind="Zip" placeholder="10001">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-50">
+
+
+                        
+
+
+                        <h3>Payment</h3>
+
+                        <div class="form-group">
+                            <label for="cname">Name on Card</label>
+                            <input type="text" id="cname" @bind="CardName" placeholder="John More Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="ccnum">Credit card number</label>
+                            <input type="text" id="ccnum" @bind="CardNumber" placeholder="1111-2222-3333-4444">
+                        </div>
+                        <div class="row">
+                            <div class="col-50">
+                                <div class="form-group">
+                                    <label for="expyear">Exp Month/Year</label>
+                                    <input type="text" id="expyear" @bind="ExpYear" placeholder="07/23">
+                                </div>
+                            </div>
+                            <div class="col-50">
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" @bind="CVV" placeholder="352">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label>
+                    <input type="checkbox" name="sameadr" @oninput="togglebillingAdress"> Use another billing adress
+                </label>
+                @if (showBillingAdress)
+                {
+                     <div class="col-50">
+                        <h3>Billing Address</h3>
+                       
+                        <div class="form-group">
+                            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                            <input type="text" id="adr" @bind="Address" placeholder="542 W. 15th Street">
+                        </div>
+                        <div class="form-group">
+                            <label for="city"><i class="fa fa-institution"></i> City</label>
+                            <input type="text" id="city" @bind="City" placeholder="New York">
+                        </div>
+                        <div class="row">
+                            <div class="col-50">
+                                <div class="form-group">
+                                    <label for="state">State</label>
+                                    <input type="text" id="state" @bind="State" placeholder="NY">
+                                </div>
+                            </div>
+                            <div class="col-50">
+                                <div class="form-group">
+                                    <label for="zip">Zip</label>
+                                    <input type="text" id="zip" @bind="Zip" placeholder="10001">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+                <br />
+                <button type="submit">Book</button>
+            </form>
+        </div>
+    </div>
+   
+</div>
+
+
+@code {
+
+    public class Alpaka
+    {
+        public int Id;
+        public string Name;
+    }
+
+    private string FullName { get; set; }
+    private string Email { get; set; }
+    private string Address { get; set; }
+    private string City { get; set; }
+    private string State { get; set; }
+    private string Zip { get; set; }
+    private string CardName { get; set; }
+    private string CardNumber { get; set; }
+    private string ExpMonth { get; set; }
+    private string ExpYear { get; set; }
+    private string CVV { get; set; }
+
+    private string selectedItem;
+
+    bool showBillingAdress;
+
+    void togglebillingAdress(ChangeEventArgs changeEvent)
+    {
+        showBillingAdress = Convert.ToBoolean(changeEvent.Value);
+    }
+  
+
+    // You can load the list of available alpacas from your data source
+    List<Alpaka> alpacasList = new List<Alpaka>
+    {
+        new Alpaka { Id = 1, Name = "Alpaca 1" },
+        new Alpaka { Id = 2, Name = "Alpaca 2" },
+        // Add more alpacas here
+    };
+
+    void SubmitBooking()
+    {
+        // Handle form submission logic here
+        // You can access the entered values in fullName, email, phoneNumber, address, selectedAlpacas, cardNumber, expMonth, and expYear
+    }
+
+
+    // select alpaka
+    
+        private List<string> dropdownItems = new List<string> { "Item 1", "Item 2", "Item 3" };
+    
+}
+

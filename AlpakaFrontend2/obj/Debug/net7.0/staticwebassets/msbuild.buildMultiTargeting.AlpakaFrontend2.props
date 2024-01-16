@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/AlpakaFrontend2.props" />
+</Project>

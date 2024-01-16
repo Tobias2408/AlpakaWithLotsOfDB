@@ -1,0 +1,63 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AlpakaFrontend2
+build_property.RootNamespace = AlpakaFrontend2
+build_property.ProjectDir = /Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2
+build_property._RazorSourceGeneratorDebug = 
+
+[/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = TmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2/Pages/AlpakaWalk.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWxwYWthV2Fsay5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2/Pages/Booking.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQm9va2luZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2/Pages/Events.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXZlbnRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2/Pages/Alpakas.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWxwYWthcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-z1d9gir62x
+
+[/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-xwdcl41k8c
+
+[/Users/tobiaspoulsen/RiderProjects/AlpakaFrontend2/AlpakaFrontend2/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

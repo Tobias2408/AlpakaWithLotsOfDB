@@ -1,0 +1,54 @@
+@page "/register"
+@inject HttpClient Http
+@using System.Net.Http.Json
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+<div>
+    <form>
+        <input type="text" @bind="registrationModel.Username" placeholder="Username" required /><br>
+        <input type="email" @bind="registrationModel.Email" placeholder="Email" required /><br>
+        <input type="password" @bind="registrationModel.Password" placeholder="Password" required /><br>
+        <button type="button" @onclick="HandleRegister">Register</button>
+    </form>
+    @if (!string.IsNullOrEmpty(message))
+    {
+        <p>@message</p>
+    }
+</div>
+</body>
+</html>
+
+@code {
+    private RegistrationModel registrationModel = new RegistrationModel();
+    private string message;
+
+    private async Task HandleRegister()
+    {
+        var response = await Http.PostAsJsonAsync("https://localhost:7053/api/Authenticate/register", registrationModel);
+        if (response.IsSuccessStatusCode)
+        {
+            message = "Registration successful!";
+         
+        }
+        else
+        {
+   
+            message = "Registration failed. Please try again.";
+           
+        }
+    }
+
+    public class RegistrationModel
+    {
+        public string Username { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+}
